@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --border-color: #0000004e;
+    --base-color-blue: #1495DD;
+    --base-color-darkblue: #296AB7;
+    --base-color-green: #14dd5a;
+    --base-color-red: #dd1414;
+    --box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 98%;    
+    margin: 5rem auto 0;
+}
+
+input{
+    border: 1px solid #C0C0C0;
+    border-radius: 3px;
+    height: 35px;
+    width: 100%;
+    padding-left: 5px;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+input[type="submit"]{
+    text-align: center;
+    border: 1px solid #C0C0C0;
+    color: white;
+    background: var(--base-color-blue);
+    padding: .5rem 1rem;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    min-width: 90px;
+}
+
+input[type="submit"]:hover{
+    filter: opacity(90%);
+}
+
+a {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--base-color-darkblue);
+    text-decoration: none;
+}
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 450px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+}
+
+/* Login Page */
+.form.login {
+    height: 400px;
+}
+
+.form.create {
+    margin-top: 1rem;
+}
+
+
+.title {text-align: center;}
+
+.title > h2 { 
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.title > p{ 
+    font-size: 10px;
+    font-weight: 400;
+}
+
+.field_name {
+    font-weight: 400;
+    font-size: 10px;
+    color: #686868;
+    margin-bottom: 12px;
+}
+
+.form > h2 {
+    margin-bottom: 12px;
+}
+
+
+.field {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.field.pass{
+    margin-top: 18px;
+    margin-bottom: 12px;
+}
+
+.password_field{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+nav {
+    display: flex;
+    width: 98%;
+    justify-content: space-between;
+    padding: .5rem;
+    margin: auto;
+}
+
+.crud {
+    display: flex;
+    gap: .8rem;
+    font-size: 14px;
+    align-items: center;
+}
+
+.crud > a{
+    color: black;
+    text-decoration: none;
+}
+
+.button {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.error {
+    width: 450px;
+    background: rgb(255, 187, 187);
+    color: rgb(34, 34, 34);
+    font-size: 14px;
+    text-align: center;
+    margin: .8rem auto;
+    border-radius: 6px;
+    padding: .8rem;
+}
+
+.success {
+    width: 450px;
+    background: rgb(141, 254, 141);
+    color: rgb(34, 34, 34);
+    font-size: 14px;
+    text-align: center;
+    margin: .8rem auto;
+    border-radius: 6px;
+    padding: .8rem;
+}
+
+/* Login Page */
+.password.login {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+/* .password.login > input[type="password"]{
+    width: 100%;
+}
+
+input[class="input_password"] {
+    background-color: var(--base-color-red);
+    width: 100%;
+} */
+
+/* Registration Page */
+
+
+
+input[name="password"] { width: 100%; }
+
+/* Create User */
+
+/* input[type="radio"]{
+    height: 25px;
+    width: 25px;
+} */
+
+
+input[type="radio"], input[type="checkbox"]{
+    height: 20px;
+    width: 20px;
+    margin-left: .8rem;
+    cursor: pointer;
+}
+
+.radio_gender{
+    display: flex;
+    justify-content: space-between;
+    margin: .5rem 0 2rem 0 ;
+}
+
+.radio_gender > div{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.radio_gender > div > label{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+select {
+    width: 100%;
+    padding: .5rem;
+    margin-bottom: 1rem;
+}
+
+
+.status_field {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+
+.label_status{
+    margin-left: .5rem;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+input[class="input_update"] { background-color: var(--base-color-green); }
+input[class="input_delete"] { background-color: var(--base-color-red); }
+input[class="input_login"] { max-width: 90px; }
