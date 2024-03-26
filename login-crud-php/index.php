@@ -15,12 +15,13 @@
 </head>
 <body>
     <?php include('templates/nav.php'); ?>
-    
+
     <h2>Dashboard</h2>
 
     <?php 
         if(isset($_POST["logout"])){
             $_SESSION["user"] = "";
+            header("Location: http://localhost/login-crud-php/login.php");
         }
     ?>
 

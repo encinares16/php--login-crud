@@ -15,7 +15,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/index.css">
+    <link href="./styles/index.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />
     <title>Find Employee By ID</title>
 </head>
 <body>
@@ -68,47 +68,75 @@
     <?php } ?> 
 
     <main>
-        <form class="form create" action="read.php" method="post">
-        <h2>Find Employee</h2>
-        
-        <div class="field">
-            <p>Record Id</p>
-            <input type="text" name="recid"value="<?php echo (!$datas == array()) ? htmlspecialchars($data['recid']) : "No records for this ID";?>"><br>
-            <p class="field_name">Record ID</p>
+        <form class="form read" action="read.php" method="post">
 
+        <div class="title">
+            <h2>Search Record</h2>
+            <p>Find Employee by ID</p>
+        </div>
+
+        <div class="field">
+            <div class="input_field">
+                <p>Record Id</p>
+                <input type="text" name="recid"value="<?php echo (!$datas == array()) ? htmlspecialchars($data['recid']) : "No records for this ID";?>">
+            </div>
             <input type="submit" class="input_find" name="submit" value="Find"> <br><br>
 
-            <p>Full Name</p>
-            <input type="text" name="name" disabled value="<?php echo (!$datas == array()) ? htmlspecialchars($data['fullname']) : "No data";?>"><br>
-            <p class="field_name">Full Name</p>
+            <div class="input_field">
+                <p>Full Name</p>
+                <input type="text" name="name" disabled value="<?php echo (!$datas == array()) ? htmlspecialchars($data['fullname']) : "No data";?>"><br>
+            </div>
 
-            <p>Address</p>
-            <input type="text" name="address" disabled value="<?php echo (!$datas == array()) ? htmlspecialchars($data['address']) : "No data";?>"><br>
-            <p class="field_name">Address</p>
+            <div class="input_field">
+                <p>Address</p>
+                <input type="text" name="address" disabled value="<?php echo (!$datas == array()) ? htmlspecialchars($data['address']) : "No data";?>"><br>
+            </div>
+        
 
-            <p>Birthdate</p>
-            <input type="text" name="birthdate" disabled value="<?php echo (!$datas == array()) ? htmlspecialchars($data['birthdate']) : "No data";?>"><br>
-            <p class="field_name">Birthdate</p> 
+            <div class="input_container"> 
+                <div class="input_field">
+                    <p>Birthdate</p>
+                    <input type="text" name="birthdate" disabled value="<?php echo (!$datas == array()) ? htmlspecialchars($data['birthdate']) : "No data";?>"><br>
+                </div>
 
-            <p>Age</p>
-            <input type="text" name="age" disabled value="<?php echo (!$datas == array()) ? htmlspecialchars($data['age']) : "No data";?>"><br>
-            <p class="field_name">Age</p> 
+                <div class="input_field">
+                    <p>Age</p>
+                    <input type="text" name="age" disabled value="<?php echo (!$datas == array()) ? htmlspecialchars($data['age']) : "No data";?>"><br>
+                </div>
+            </div>
 
-            <p>Gender</p>
-            <input type="text" name="gender" disabled value="<?php echo (!$datas == array()) ? htmlspecialchars($data['gender']) : "No data";?>"><br>
-            <p class="field_name">Gender</p> 
+            <div class="input_container"> 
+                <div class="input_field"> 
+                    <p>Gender</p>
+                    <input type="text" name="gender" disabled value="<?php echo (!$datas == array()) ? htmlspecialchars($data['gender']) : "No data";?>"><br>
+                </div>
+                <div class="input_field"> 
+                    <p>Status</p>
+                    <input type="text" name="status" disabled value="<?php echo (!$datas == array()) ? htmlspecialchars($data['civilstat']) : "No data";?>"><br>
+                </div>
+            </div>
 
-            <p>Status</p>
-            <input type="text" name="status" disabled value="<?php echo (!$datas == array()) ? htmlspecialchars($data['civilstat']) : "No data";?>"><br>
-            <p class="field_name">Status</p> 
+            <div class="input_field"> 
+                <p>Contact</p>
+                <input type="text" name="contact" disabled value="<?php echo (!$datas == array()) ? htmlspecialchars($data['contactnum']) : "No data";?>"><br>
+            </div>
 
-            <p>Contact</p>
-            <input type="text" name="contact" disabled value="<?php echo (!$datas == array()) ? htmlspecialchars($data['contactnum']) : "No data";?>"><br>
-            <p class="field_name">Contact</p>
+            <div class="input_container"> 
+                <div class="input_field"> 
+                    <p>Salary</p>
+                    <input type="text" name="salary" disabled value="₱ <?php echo (!$datas == array()) ? htmlspecialchars($data['salary']) : "No data";?>"><br>
+                </div>
 
-            <p>Salary</p>
-            <input type="text" name="salary" disabled value="<?php echo (!$datas == array()) ? htmlspecialchars($data['salary']) : "No data";?>"><br>
-            <p class="field_name">Salary</p> 
+                <div class="input_field active_status"> 
+                <p>Employee Active Status</p>
+                <div>
+                    <p>Status</p>
+                    <?php echo (!$datas == array())  && ($data['isactive'] == 1) ? '<input type="checkbox" name="isActive" disabled checked > <br>' : '<input type="checkbox" name="isActive" disabled > <br>' ?>
+                </div>
+                <p></p>
+            </div>
+            
+            </div>
         </div>
         </form>
     </main>
